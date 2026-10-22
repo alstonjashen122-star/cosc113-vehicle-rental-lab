@@ -1,31 +1,34 @@
 public class Vehicle {
-    public class Car extends Vehicle {
-    private int doors;
-    String type = "Car";
+    private String brand;
+    private int year;
+    private int speed;
+    String type = "Vehicle";
 
-    public Car(String brand, int year, int doors) {
-        super(brand, year);
-        setDoors(doors);
+    public Vehicle(String brand, int year) {
+        this.brand = brand;
+        this.year = year;
+        this.speed = 0;
     }
 
-    public int getDoors() { return doors; }
+    public String getBrand() { return brand; }
+    public int getYear() { return year; }
+    public int getSpeed() { return speed; }
 
-    public void setDoors(int doors) {
-        if (doors == 2 || doors == 4) {
-            this.doors = doors;
+    public void setSpeed(int speed) {
+        if (speed >= 0) {
+            this.speed = speed;
         } else {
-            System.out.println("Invalid number of doors. Must be 2 or 4.");
+            System.out.println("Invalid speed rejected.");
         }
     }
 
-    @Override
     public void describe() {
-        super.describe();
-        System.out.println("Doors: " + doors);
+        System.out.println("Vehicle: " + brand + " (" + year + ")");
     }
 
-    public void showTypes() {
-        System.out.println("Type: " + type + " | Parent type: " + super.type);
+    public void accelerate(int amount) {
+        if (amount > 0) {
+            this.speed += amount;
+        }
     }
-}
 }
