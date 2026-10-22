@@ -1,0 +1,20 @@
+public class Main {
+    public static void main(String[] args) {
+        Car myCar = new Car("Toyota", 2022, 4);
+        ElectricCar myTesla = new ElectricCar("Tesla", 2023, 4, 85);
+
+        myCar.describe();
+        myCar.accelerate(20);
+        myCar.showTypes();
+
+        System.out.println();
+
+        myTesla.describe();
+        myTesla.accelerate(30);
+        myTesla.showTypes();
+
+        System.out.println("\n--- Testing Validation & Encapsulation ---");
+        myCar.setSpeed(-10);
+        myCar.setDoors(3);
+    }
+}
